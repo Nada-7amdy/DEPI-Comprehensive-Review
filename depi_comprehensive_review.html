@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل منحة رواد مصر الرقمية (DEPI)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8f9fa;
+            color: #334155;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(226, 232, 240, 1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .accent-border {
+            border-right: 4px solid #1e40af;
+        }
+        .tab-active {
+            border-bottom: 3px solid #1e40af;
+            color: #1e40af;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Header Section -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-reverse space-x-3">
+                <div class="bg-blue-800 text-white p-2 rounded-lg font-bold">DEPI</div>
+                <h1 class="text-xl md:text-2xl font-bold text-slate-800">محلل منحة رواد مصر الرقمية</h1>
+            </div>
+            <nav class="hidden md:flex space-x-reverse space-x-6 text-sm font-semibold">
+                <a href="#overview" class="hover:text-blue-700">نظرة عامة</a>
+                <a href="#curriculum" class="hover:text-blue-700">المحتوى التقني</a>
+                <a href="#commitments" class="hover:text-blue-700">الالتزامات</a>
+                <a href="#community" class="hover:text-blue-700">آراء المجتمع</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- Intro Section -->
+        <section id="overview" class="mb-12">
+            <div class="bg-blue-900 text-white rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <div class="relative z-10 md:w-2/3">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-amber-400">مستقبلك يبدأ هنا.. ولكن بوعي!</h2>
+                    <p class="text-lg opacity-90 leading-relaxed mb-6">
+                        تعد منحة DEPI إحدى أضخم المبادرات الحكومية لوزارة الاتصالات وتكنولوجيا المعلومات (MCIT). تهدف لتأهيل الطلاب والخريجين لسوق العمل العالمي عبر شراكات مع عمالقة التكنولوجيا. في هذا التطبيق، نفكك لك كل تفاصيلها بناءً على التقارير الرسمية وتجارب "الميدان".
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-blue-800 px-4 py-2 rounded-full border border-blue-600 text-sm">📅 مدة الدراسة: 3-6 أشهر</div>
+                        <div class="bg-blue-800 px-4 py-2 rounded-full border border-blue-600 text-sm">🌐 نظام هجين: أونلاين + أوفلاين</div>
+                        <div class="bg-blue-800 px-4 py-2 rounded-full border border-blue-600 text-sm">💰 التكلفة: ممولة (بشروط)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card rounded-2xl p-6 shadow-sm flex flex-col h-full">
+                <h3 class="text-xl font-bold mb-4 accent-border pr-3">هيكل التدريب وتوزيع الوقت</h3>
+                <p class="text-sm text-slate-500 mb-4">يوزع البرنامج مجهوده لضمان تقفيل الفجوة بين الأكاديمية وسوق العمل.</p>
+                <div class="chart-container flex-grow">
+                    <canvas id="structureChart"></canvas>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl p-6 shadow-sm flex flex-col h-full">
+                <h3 class="text-xl font-bold mb-4 accent-border pr-3">الشركاء التقنيين (المصداقية)</h3>
+                <p class="text-sm text-slate-500 mb-4">الشهادة مدعومة بأسماء عالمية مما يزيد من قوتها في الـ CV.</p>
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div class="p-4 bg-slate-50 rounded-xl text-center border border-slate-100">
+                        <span class="block text-2xl font-bold text-blue-600">Microsoft</span>
+                        <span class="text-xs text-slate-500">Cloud & Dev</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl text-center border border-slate-100">
+                        <span class="block text-2xl font-bold text-blue-600">Amazon</span>
+                        <span class="text-xs text-slate-500">AWS Services</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl text-center border border-slate-100">
+                        <span class="block text-2xl font-bold text-blue-600">Cisco</span>
+                        <span class="text-xs text-slate-500">Networking</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl text-center border border-slate-100">
+                        <span class="block text-2xl font-bold text-blue-600">Google</span>
+                        <span class="text-xs text-slate-500">Data & Cloud</span>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                    <p class="text-sm text-amber-800">💡 <strong>ملحوظة:</strong> المنحة توفر Vouchers لبعض الشهادات الدولية، وهي ميزة قد تصل قيمتها لـ $200.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Curriculum Deep Dive -->
+        <section id="curriculum" class="mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-slate-800">1. المنهج وتوافق السوق (The Tech Depth)</h3>
+            <p class="mb-6 text-slate-600">المنهج مصمم بناءً على منصات تدريب عالمية (مثل Pluralsight و Percipio)، مما يضمن الحداثة.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-blue-500">
+                    <h4 class="font-bold text-lg mb-3">حداثة التقنيات</h4>
+                    <p class="text-sm leading-relaxed mb-4">يتم التدريس باستخدام أحدث الإصدارات (Next.js, Python 3.x, AI integrations). المنحة لا تكتفي بالنظري بل تركز على أدوات "الإنتاجية".</p>
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Update 2024/2025</span>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-blue-500">
+                    <h4 class="font-bold text-lg mb-3">البيئة العملية (Labs)</h4>
+                    <p class="text-sm leading-relaxed mb-4">تعتمد المنحة على معامل افتراضية. في مسارات الأمن السيبراني مثلاً، يتم استخدام منصات مثل TryHackMe لمحاكاة اختراقات حقيقية.</p>
+                    <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Hands-on Experience</span>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-blue-500">
+                    <h4 class="font-bold text-lg mb-3">مشروع التخرج</h4>
+                    <p class="text-sm leading-relaxed mb-4">تنتهي المنحة بـ "Capstone Project" يحاكي مشكلة حقيقية في الصناعة، وهو حجر الزاوية في معرض أعمالك (Portfolio).</p>
+                    <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Career Builder</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- The "Hidden" Reality (Commitments) -->
+        <section id="commitments" class="mb-12 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+            <h3 class="text-2xl font-bold mb-6 text-slate-800">2. الالتزامات والشروط (The Fine Print)</h3>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <p class="mb-6 leading-relaxed">هنا تكمن التفاصيل التي قد تغيب عن البعض. المنحة ممولة بالكامل ولكنها تتطلب "جدية" قصوى والتزامات قانونية ومالية.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-reverse space-x-3 bg-red-50 p-4 rounded-xl border-r-4 border-red-500">
+                            <div class="text-2xl">⚠️</div>
+                            <div>
+                                <h5 class="font-bold text-red-900">إقرار الـ 16,000 جنيه</h5>
+                                <p class="text-sm text-red-800">يوقع الطالب على إقرار (تعهد) بسداد تكلفة المنحة (حوالي 16 ألف جنيه) في حال الانسحاب بدون عذر مقبول أو عدم استكمال المهام.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-reverse space-x-3 bg-amber-50 p-4 rounded-xl border-r-4 border-amber-500">
+                            <div class="text-2xl">💻</div>
+                            <div>
+                                <h5 class="font-bold text-amber-900">تحدي العمل الحر (Freelancing)</h5>
+                                <p class="text-sm text-amber-800">يُطلب من المتدرب تحقيق دخل معين من منصات العمل الحر (مثل Upwork) يتراوح بين 100$ إلى 300$ كشرط للتخرج النهائي.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-reverse space-x-3 bg-slate-50 p-4 rounded-xl border-r-4 border-slate-500">
+                            <div class="text-2xl">🕒</div>
+                            <div>
+                                <h5 class="font-bold text-slate-900">ضغط الوقت</h5>
+                                <p class="text-sm text-slate-800">المنحة تتطلب حضوراً مكثفاً (أحياناً يومياً أونلاين) ومهام أسبوعية صارمة. قد تتعارض مع امتحانات الجامعة إذا لم يتم التنسيق.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-slate-100 p-6 rounded-2xl">
+                        <h5 class="font-bold mb-4 text-center">خريطة ضغط المجهود الأسبوعي</h5>
+                        <div class="chart-container">
+                            <canvas id="effortChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Verdict Section -->
+        <section id="community" class="mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-slate-800">3. صوت المجتمع (LinkedIn & Social Media)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-green-50 p-6 rounded-2xl border border-green-200">
+                    <h5 class="text-green-800 font-bold mb-3 flex items-center">
+                        <span class="ml-2">✅</span> الإيجابيات (حسب تجارب الخريجين)
+                    </h5>
+                    <ul class="text-sm text-green-900 space-y-2">
+                        <li>• "الشهادة معتمدة رسمياً وتفتح أبواباً في الشركات الكبرى بمصر."</li>
+                        <li>• "الشبكة الاجتماعية (Networking) مع المدربين والزملاء هي المكسب الأكبر."</li>
+                        <li>• "توفر اشتراكات مجانية في منصات تعليمية مدفوعة ومكلفة."</li>
+                    </ul>
+                </div>
+                <div class="bg-red-50 p-6 rounded-2xl border border-red-200">
+                    <h5 class="text-red-800 font-bold mb-3 flex items-center">
+                        <span class="ml-2">❌</span> التحديات (نقاط الشكوى المتكررة)
+                    </h5>
+                    <ul class="text-sm text-red-900 space-y-2">
+                        <li>• "تأخير في الرد على الاستفسارات الإدارية في بعض المسارات."</li>
+                        <li>• "صعوبة التوفيق بين شرط الـ Freelancing وبين الدراسة الأكاديمية."</li>
+                        <li>• "بعض المحاضرين (Academic) يفتقرون للخبرة العملية العميقة في 'السوق'."</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendation Tool -->
+        <section class="bg-blue-50 rounded-3xl p-8 text-center border border-blue-100 shadow-inner">
+            <h3 class="text-2xl font-bold mb-4 text-blue-900">هل المنحة مناسبة لك؟</h3>
+            <p class="text-blue-800 mb-8 max-w-2xl mx-auto">أجب عن هذه الأسئلة البسيطة لنعطيك نصيحة مخصصة.</p>
+            
+            <div id="quizContainer" class="max-w-md mx-auto space-y-6">
+                <div class="quiz-step" data-step="1">
+                    <p class="font-semibold mb-4">هل لديك 20 ساعة أسبوعياً على الأقل للتفرغ؟</p>
+                    <div class="flex justify-center space-x-reverse space-x-4">
+                        <button onclick="nextStep(true)" class="bg-blue-600 text-white px-8 py-2 rounded-lg hover:bg-blue-700 transition">نعم</button>
+                        <button onclick="nextStep(false)" class="bg-white border border-blue-200 px-8 py-2 rounded-lg hover:bg-slate-50 transition">لا</button>
+                    </div>
+                </div>
+                <div class="quiz-step hidden" id="resultArea">
+                    <div id="finalVerdict" class="p-6 bg-white rounded-2xl shadow-sm border border-blue-200">
+                        <!-- Result will be injected here -->
+                    </div>
+                    <button onclick="resetQuiz()" class="mt-4 text-blue-600 underline text-sm">إعادة الاختبار</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm">هذا التقرير هو تحليل استرشادي بناءً على البيانات المتاحة حتى تاريخه.</p>
+            <p class="text-xs mt-4">جميع الحقوق محفوظة - تحليل DEPI التفاعلي © 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // Data for Charts
+        const structureData = {
+            labels: ['المحتوى التقني', 'مهارات ناعمة (Soft Skills)', 'العمل الحر (Freelancing)', 'الإنجليزية'],
+            datasets: [{
+                data: [50, 15, 20, 15],
+                backgroundColor: ['#1e40af', '#3b82f6', '#fbbf24', '#94a3b8'],
+                borderWidth: 0
+            }]
+        };
+
+        const effortData = {
+            labels: ['الأسبوع 1', 'الأسبوع 4', 'الأسبوع 8', 'الأسبوع 12 (المشروع)'],
+            datasets: [{
+                label: 'مستوى الضغط',
+                data: [30, 60, 75, 95],
+                borderColor: '#1e40af',
+                backgroundColor: 'rgba(30, 64, 175, 0.1)',
+                fill: true,
+                tension: 0.4
+            }]
+        };
+
+        // Initialize Charts
+        window.onload = function() {
+            const ctx1 = document.getElementById('structureChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'doughnut',
+                data: structureData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 12, font: { family: 'Cairo' } } }
+                    }
+                }
+            });
+
+            const ctx2 = document.getElementById('effortChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'line',
+                data: effortData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, max: 100 }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        };
+
+        // Quiz Logic
+        let quizScore = 0;
+        function nextStep(answer) {
+            if(answer) quizScore++;
+            
+            const steps = document.querySelectorAll('.quiz-step');
+            steps[0].classList.add('hidden');
+            document.getElementById('resultArea').classList.remove('hidden');
+            
+            const resultDiv = document.getElementById('finalVerdict');
+            if(quizScore > 0) {
+                resultDiv.innerHTML = `
+                    <h4 class="text-green-600 font-bold text-xl mb-2">توكل على الله!</h4>
+                    <p class="text-slate-600">أنت مستعد للالتزام. المنحة ستضيف لك الكثير تقنياً وعملياً. ننصحك بالتركيز على مسارات Microsoft أو AWS لقوتها في السوق.</p>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <h4 class="text-amber-600 font-bold text-xl mb-2">فكر مرة أخرى..</h4>
+                    <p class="text-slate-600">المنحة تتطلب وقتاً كبيراً. إذا كنت في سنة دراسية مزدحمة، قد يكون من الأفضل تأجيلها أو اختيار مسار "التعلّم الذاتي" لتجنب غرامة الانسحاب.</p>
+                `;
+            }
+        }
+
+        function resetQuiz() {
+            quizScore = 0;
+            document.getElementById('resultArea').classList.add('hidden');
+            document.querySelectorAll('.quiz-step')[0].classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
